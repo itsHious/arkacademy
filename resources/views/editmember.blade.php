@@ -109,6 +109,11 @@
                             <input type="file" name="image" class="form-control"  >
                             <small>{{ $mem->image }}</small>
                         </div>
+
+                        <div class="form-group">
+                            <label for="Comment">Comment</label>
+                            <textarea name="comment" class="form-control" cols="30" rows="10">{{ $r->comment }}</textarea>
+                          </div>
                     </div>
                 </div>
 

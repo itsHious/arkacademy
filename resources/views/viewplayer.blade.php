@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-3 col-md-4 label">House No.</div>
+                  <div class="col-lg-3 col-md-4 label">Date Joined</div>
                   <div class="col-lg-9 col-md-8">{{ $mem->house??'N/A' }}</div>
                 </div>
 
@@ -86,11 +86,11 @@
                     <div class="col-lg-9 col-md-8">{{ $mem->email??'N/A' }}</div>
                   </div>
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Height(ft)</div>
+                    <div class="col-lg-3 col-md-4 label">Height(m)</div>
                     <div class="col-lg-9 col-md-8">{{ $mem->height_one??'N/A' }}</div>
                   </div>
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">height(in)</div>
+                    <div class="col-lg-3 col-md-4 label">Jersey Number</div>
                     <div class="col-lg-9 col-md-8">{{ $mem->height_two??'N/A' }}</div>
                   </div>
                   <div class="row">
@@ -98,7 +98,7 @@
                     <div class="col-lg-9 col-md-8">{{ $mem->weight??'N/A' }}</div>
                   </div>
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Allergies</div>
+                    <div class="col-lg-3 col-md-4 label">Allergies/Medical Condition</div>
                     <div class="col-lg-9 col-md-8">{{ $mem->allergy??'N/A' }}</div>
                   </div>
                   <div class="row">

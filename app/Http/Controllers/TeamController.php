@@ -59,6 +59,7 @@ class TeamController extends Controller
             'parent'=>$r->parent,
             'parent_phone'=>$r->parent_phone,
             'image'=>$image,
+            'comment'=>$r->comment
         ]);
 
        $team = Team::where('id',$id)->first();
@@ -126,6 +127,7 @@ class TeamController extends Controller
             'allergy'=>$r->allergy,
             'parent'=>$r->parent,
             'parent_phone'=>$r->parent_phone,
+            'comment'=>$r->comment
            
         ]);
 

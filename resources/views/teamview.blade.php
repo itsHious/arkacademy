@@ -41,8 +41,8 @@
                             <input type="text" name="residence" class="form-control" >
                         </div>
                         <div class="form-group mt-2">
-                            <label for="">House no.</label>
-                            <input type="text" name="house" class="form-control" >
+                            <label for="">Date Joined </label>
+                            <input type="date" name="house" class="form-control" >
                         </div>
 
                         <div class="form-group mt-2">
@@ -50,7 +50,7 @@
                             <input type="number" name="weight" class="form-control" required>
                         </div>
                         <div class="form-group mt-2">
-                            <label for="">allergies</label>
+                            <label for="">Allergies/Medical Condition</label>
                             <input type="text" name="allergy" class="form-control" >
                         </div>
                         
@@ -99,16 +99,21 @@
                             <input type="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group mt-2">
-                            <label for="">Height(ft)</label>
+                            <label for="">Height(m)</label>
                             <input type="number" name="height_one" class="form-control" required>
                         </div>
                         <div class="form-group mt-2">
-                            <label for="">Height(in)</label>
+                            <label for="">Jersey Number</label>
                             <input type="number" name="height_two" class="form-control" required>
                         </div>
                         <div class="form-group mt-2">
                             <label for="">Member Photo</label>
                             <input type="file" name="image" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="Comment">Comment</label>
+                          <textarea name="comment" class="form-control" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                 </div>
