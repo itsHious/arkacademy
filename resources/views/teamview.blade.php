@@ -127,6 +127,35 @@
         </div>
         <h5 class="card-title">Team Info</h5>
 
+        <div class="col-lg-8 mx-auto jumbotron mb-4">
+          <b class="text-center">Filter By Age</b>
+          <form action="{{ route('team.view',$team->id) }}?search" method="get">
+            <div class="row">
+              <div class="col-lg">
+                <div class="form-group">
+                  <label for="">Filter Option</label>
+                  <select name="option" class="form-control" >
+                    <option value="Under">Under</option>
+                    <option value="Over">Over</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg">
+                <div class="form-group">
+                  <label for="">Age</label>
+                  <input type="number" name="age" class="form-control">
+                </div>
+              </div>
+            </div>
+          
+            <div class="text-center mt-3">
+              <button class="btn btn-sm btn-success col-lg-4 ">Filter</button>
+              <a href="{{ route('team.view',$team->id) }}" class="btn btn-sm btn-info col-lg-4 ">Reset</a>
+            </div>
+          </form>
+
+        </div>
+
         <table class="table table-borderless datatable">
           <thead>
             <tr>
@@ -153,8 +182,8 @@
                 
               </tr>
             @empty
-            <tr>
-                <th colspan="3">No Data Available</th>
+            <tr class="text-center">
+                <th colspan="5">No Data Available</th>
                 
               </tr>
             @endforelse

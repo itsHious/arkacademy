@@ -26,7 +26,7 @@
             <div class="card recent-sales overflow-auto">
 
               <div class="filter p-2">
-                <a data-bs-toggle="collapse" href="#addfile" class="btn btn-primary btn-sm ">Add Team</a>
+                <a data-bs-toggle="collapse" href="#addfile" class="btn btn-success btn-sm ">Add Team</a>
               </div>
 
               <div class="card-body">
@@ -58,12 +58,15 @@
                     </tr>
                   </thead>
                   <tbody>
+
+                    
+
                     @forelse ($team as $item)
                     <tr>
                         <th scope="row">{{ $item->name }}</th>
                         <td>{{ $item->count }}</td>
                         <td>
-                            <a href="{{ route('team.view',$item->id) }}" class="btn btn-sm btn-primary">View</a>
+                            <a href="{{ route('team.view',$item->id) }}" class="btn btn-sm btn-success">View</a>
                             <a href="{{ route('team.edit',$item->id) }}" class="btn btn-sm btn-info">Edit</a>
                             <a href="{{ route('team.delete',$item->id) }}" class="btn btn-sm btn-danger">Delete</a>
                         </td>

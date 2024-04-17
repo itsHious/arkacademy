@@ -14,7 +14,7 @@ class AddComment extends Migration
     public function up()
     {
         Schema::table('players', function (Blueprint $table) {
-            //
+            $table->string('comment')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddComment extends Migration
     public function down()
     {
         Schema::table('players', function (Blueprint $table) {
-            //
+            $table->dropColumn('comment');
         });
     }
 }

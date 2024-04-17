@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Players;
 use App\Models\Team;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -24,14 +25,47 @@ class TeamController extends Controller
         return view('dashboard',compact('team'));
     }
 
-    public function viewteam($id){
+    public function viewteam($id,Request $r){
         $team = Team::where('id',$id)->first();
-        if($team !== null){
-            $pl = Players::where('team',$id)->get();
-            return view('teamview',compact('team','pl'));
-        }else{
+        if($r->age !== null){
+           switch ($r->option) {
+            case 'Under':
+                $pl = Players::where('team', $id)
+                ->where('dob', '>', Carbon::now()->subYears($r->age))
+                ->get();                
+                return view('teamview',compact('team','pl'));
+                break;
+
+            case 'Over':
+                $pl = Players::where('team', $id)
+                ->where('dob', '<=', Carbon::now()->subYears($r->age))
+                ->get();                
+                return view('teamview',compact('team','pl'));
+                break;
+            default:
             alert()->error('No Team Info Found')->persistent();
+            return back();
+                break;
+           }
+        }else{
+            
+            if($team !== null){
+                $pl = Players::where('team',$id)->get();
+                return view('teamview',compact('team','pl'));
+            }else{
+                alert()->error('No Team Info Found')->persistent();
+                return back();
+            }
         }
+
+
+
+
+
+
+
+
+       
     }
 
 
