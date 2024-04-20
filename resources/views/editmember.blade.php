@@ -112,7 +112,7 @@
 
                         <div class="form-group">
                             <label for="Comment">Comment</label>
-                            <textarea name="comment" class="form-control" cols="30" rows="10">{{ $r->comment }}</textarea>
+                            <textarea name="comment" class="form-control" cols="30" rows="10">{{ $mem->comment??"N/A" }}</textarea>
                           </div>
                     </div>
                 </div>
