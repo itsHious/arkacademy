@@ -47,7 +47,17 @@ class TeamController extends Controller
             return back();
                 break;
            }
-        }else{
+        }elseif($r->option == 'Between' && $r->toage !== null && $r->fromage !==null){
+            // return 'lol';
+            $pl = Players::where('team', $id)
+              ->whereBetween('dob', [
+                  Carbon::now()->subYears($r->toage), // older bound
+                  Carbon::now()->subYears($r->fromage)   // younger bound
+               ])
+               ->get();
+                return view('teamview',compact('team','pl'));
+        }
+        else{
             
             if($team !== null){
                 $pl = Players::where('team',$id)->get();

@@ -134,13 +134,27 @@
               <div class="col-lg">
                 <div class="form-group">
                   <label for="">Filter Option</label>
-                  <select name="option" class="form-control" >
+                  <select name="option" class="form-control select" >
                     <option value="Under">Under</option>
                     <option value="Over">Over</option>
+                    <option value="Between">Between</option>
                   </select>
                 </div>
               </div>
-              <div class="col-lg">
+              <div class="col-lg one">
+                <div class="form-group">
+                  <label for="">From(Age)</label>
+                  <input type="number" name="fromage" class="form-control">
+                </div>
+              </div>
+              <div class="col-lg two">
+                <div class="form-group">
+                  <label for="">To(Age)</label>
+                  <input type="number" name="toage" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-lg three">
                 <div class="form-group">
                   <label for="">Age</label>
                   <input type="number" name="age" class="form-control">
@@ -196,4 +210,25 @@
     </div>
   </div><!-- End Recent Sales -->
 </section>
+@endsection
+
+
+@section('page-js')
+    <script>
+
+$('.one').hide();
+$('.two').hide();
+
+$('.select').on('change',function(){
+if($('.select').val() =="Between"){
+  $('.one').show();
+  $('.two').show();
+  $('.three').hide();
+}else{
+  $('.one').hide();
+  $('.two').hide();
+  $('.three').show();
+}
+});
+    </script>
 @endsection
